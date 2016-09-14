@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+</head>
+<body>
+
+<div class="container">
+    <div th:fragment="header">
+		<div class="row text-left">
+			<div class="col-md-2">
+				<img src="../../static/images/world_map_png-6.png" width="185"
+					th:src="@{/images/world_map_png-6.png}" />
+			</div>
+			<div class="col-md-10">
+				<div class="">
+					<h2>Code Captain</h2>
+					<h4>Hello World</h4>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+</body>
+</html>
