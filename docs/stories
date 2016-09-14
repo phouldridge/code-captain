@@ -1,0 +1,33 @@
+As a User I want to be able to log into the system and have my data secure from other Users.
+
+As a Student I want to get the instructions on using the system and how coding assignments (assignments) are graded.
+As a Student I want to see of the list my assignments. 
+As a Student I want to see which assignments in the list are complete.
+As a Student I want to see the due dates for the assignments in the list.
+As a Student I want to see which assignments if any are late.
+
+As a Student I want to get the full description and instructions for an assignment.
+As a Student I want to edit the assignment on the site and be able to submit it.
+As a Student I want to get quick feedback on the build of a submitted assignment.
+As a Student I want to get quick feedback on the validity of a submitted assignment.
+As a Student I want the feedback to indicate any build error and failed test cases.
+As a Student I want to see the console output from executing a submitted assignment.
+As a Student I want to submit an assignment until it passes.
+As a Student it would be nice to be able to re-execute the submitted assignment.
+As a Student it would  be nice to see the history of submitted assignments.
+As a Student it would nice to be able to revert back to a previous submission.
+
+As a Teacher I want to add a Student to the system.
+As a Teacher I want to add a Class to the system.
+As a Teacher I want to add Students to a Class.
+As a Teacher I want to inactivate a Student from the system.
+As a Teacher I want to inactivate and archive a Class.
+As a Teacher it would be nice to be able to restore an archived Class. 
+As a Teacher I want to add Assignments to one or more Classes. 
+As a Teacher I want to add a title, description and instructions,due date, solution, test cases, supporting code for an Assignment.
+As a Teacher I want to verify an Assignment's solution as if it was a Student's submission.
+As a Taacher I want to see a list of Assignments for a Class.
+As a Teacher I want to see a Student's Submission.
+As a Teacher I want to see the progress of a Class.
+As a Teacher I want to see the progress of all my Students.
+As a Teacher I want to export Assignment results for integration with Student Information Systems.
