@@ -1,3 +1,8 @@
+As an Admin I want to add Users to the system
+As an Admin I want to inactivate a User in the system.
+As an Admin I want to specify a User's role (admin, student, teacher) 
+As an Admin I want to be able to see of list of all the Users in the system.
+
 As a User I want to be able to log into the system and have my data secure from other Users.
 
 As a Student I want to get the instructions on using the system and how coding assignments (assignments) are graded.
@@ -17,10 +22,8 @@ As a Student it would be nice to be able to re-execute the submitted assignment.
 As a Student it would  be nice to see the history of submitted assignments.
 As a Student it would nice to be able to revert back to a previous submission.
 
-As a Teacher I want to add a Student to the system.
 As a Teacher I want to add a Class to the system.
 As a Teacher I want to add Students to a Class.
-As a Teacher I want to inactivate a Student from the system.
 As a Teacher I want to inactivate and archive a Class.
 As a Teacher it would be nice to be able to restore an archived Class. 
 As a Teacher I want to add Assignments to one or more Classes. 
@@ -30,4 +33,5 @@ As a Taacher I want to see a list of Assignments for a Class.
 As a Teacher I want to see a Student's Submission.
 As a Teacher I want to see the progress of a Class.
 As a Teacher I want to see the progress of all my Students.
+As a Teacher I want to see the progress of a single Student.
 As a Teacher I want to export Assignment results for integration with Student Information Systems.
