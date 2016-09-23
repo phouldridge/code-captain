@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
-
 </head>
 <body>
 
 <div class="container">
     <div th:fragment="header">
+		<title>Code Captain</title>
 		<div class="row text-left">
 			<div class="col-md-2">
 				<img src="../../static/images/world_map_png-6.png" width="185"
@@ -25,7 +25,7 @@
                     <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
                     <ul class="nav navbar-nav">
                         <li><a href="#" th:href="@{/users}">Users</a></li>
-                        <li><a href="#" th:href="@{/assignment}">Assignment</a></li>
+                        <li><a href="#" th:href="@{/assignments}">Assignments</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,28 +1,54 @@
 package com.northbender.controllers;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.northbender.domain.Assignment;
+import com.northbender.services.AssignmentService;
 
 @Controller
 public class AssignmentController {
 
 	private Logger log = Logger.getLogger(AssignmentController.class);
+	private AssignmentService assignmentService;
 
-	@RequestMapping("/assignment")
-	String showAssignment(Model model) {
-		model.addAttribute("assignment", new Assignment());
-		return "assignment";
+	@Autowired
+	public void setAssignmentService(AssignmentService assignmentService) {
+		this.assignmentService = assignmentService;
 	}
 
-	@RequestMapping(value = "/submit", method = RequestMethod.POST)
-	public String submitCode(Assignment assignment, Model model) {
-		log.info("Solution being submitted: " + assignment.getSolution());
-		model.addAttribute("assignment", assignment);
-		return "submit";
+	@RequestMapping(value = "/assignments", method = RequestMethod.GET)
+	String listAssignments(Model model) {
+		model.addAttribute("assignments", assignmentService.listAll());
+		return "assignments";
+	}
+
+	@RequestMapping("/assignment/{id}")
+	public String showAssignment(@PathVariable Integer id, Model model) {
+		model.addAttribute("assignment", assignmentService.getAssignmentById(id));
+		return "assignmentdetail";
+	}
+
+	@RequestMapping("/assignment/edit/{id}")
+	public String editAssignment(@PathVariable Integer id, Model model) {
+		model.addAttribute("assignment", assignmentService.getAssignmentById(id));
+		return "assignmentform";
+	}
+
+	@RequestMapping(value = "/assignment/save", method = RequestMethod.POST)
+	String saveAssignment(Assignment assignment) {
+		assignmentService.saveAssignment(assignment);
+		return "redirect:/assignment/" + assignment.getId();
+	}
+
+	@RequestMapping("/assignment/new")
+	public String newAssignment(Model model) {
+		model.addAttribute("assignment", new Assignment());
+		return "assignmentform";
 	}
 }
