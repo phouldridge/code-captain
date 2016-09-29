@@ -6,27 +6,20 @@
 #editor {
 	height: 300px;
 }
-
-#console {
-	width: 100%;
-	background-color: black;
-	color: white;
-	font-family: courier;
-	read-only: true;
-}
 </style>
 </head>
 <body>
 
 	<div class="container">
 		<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
-		<form class="form-horizontal" th:object="${assignment}" th:action="@{/submit}" method="post">
-			<input type="hidden" th:field="*{id}" />
-			<input type="hidden" th:field="*{version}" />
-			<input type="hidden" th:field="*{solution}" id="solution" name="solution"/>
+		<form class="form-horizontal" th:object="${assignment}"
+			th:action="@{/assignment/result}" method="post">
+			<input type="hidden" th:field="*{id}" /> <input type="hidden"
+				th:field="*{version}" /> <input type="hidden"
+				th:field="*{solution}" id="solution" name="solution" />
 			<div class="form-group">
-				<label class="col-sm-1 control-label">Title:</label>
-				<div class="col-sm-11">
+				<label class="col-sm-2 control-label">Title:</label>
+				<div class="col-sm-10">
 					<input type="text" class="form-control" th:field="*{title}" />
 				</div>
 			</div>
@@ -35,18 +28,20 @@
 					<h3 class="panel-title">Editor:</h3>
 				</div>
 				<div class="panel-body">
-					<div id="editor"></div>
+ 				  <div id="editor">public void sayHello() {
+ 				  	System.out.println("Hello World");
+ 				  }</div> 
 				</div>
 			</div>
 			<button type="submit" class="btn btn-default">Submit</button>
 		</form>
 	</div>
 
-	<script src="webjars/ace/01.08.2014/src-min/ace.js"
-		type="text/javascript" charset="utf-8"></script>
+	<script src="/webjars/ace/01.08.2014/src-min/ace.js" type="text/javascript"
+		charset="utf-8"></script>
 	<script>
 		var editor = ace.edit("editor");
-		editor.setTheme("ace/theme/chrome");
+		editor.setTheme("ace/theme/clouds");
 		editor.getSession().setMode("ace/mode/java");
 
 		var input = $('#solution');

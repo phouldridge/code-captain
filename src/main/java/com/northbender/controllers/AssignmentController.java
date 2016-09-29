@@ -40,6 +40,12 @@ public class AssignmentController {
 		return "assignmentform";
 	}
 
+	@RequestMapping("/assignment/editor/{id}")
+	public String editorAssignment(@PathVariable Integer id, Model model) {
+		model.addAttribute("assignment", assignmentService.getAssignmentById(id));
+		return "assignment";
+	}
+
 	@RequestMapping(value = "/assignment/save", method = RequestMethod.POST)
 	String saveAssignment(Assignment assignment) {
 		assignmentService.saveAssignment(assignment);
@@ -50,5 +56,11 @@ public class AssignmentController {
 	public String newAssignment(Model model) {
 		model.addAttribute("assignment", new Assignment());
 		return "assignmentform";
+	}
+
+	@RequestMapping(value = "/assignment/result", method = RequestMethod.POST)
+	String submitAssignment(Assignment assignment) {
+		log.info( "assignment submitted:  " + assignment.getSolution());
+		return "assignmentresult";
 	}
 }
