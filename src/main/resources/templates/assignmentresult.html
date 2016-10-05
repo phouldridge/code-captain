@@ -29,9 +29,15 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-2 control-label">From editor:</label>
+					<label class="col-sm-2 control-label">Passed:</label>
 					<div class="col-sm-10">
-						<p class="form-control-static" th:text="${assignment.solution}">Solution</p>
+						<p class="form-control-static" th:text="${built}">built</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Console output:</label>
+					<div class="col-sm-10">
+						<p class="form-control-static" th:text="${console}">Output</p>
 					</div>
 				</div>
 			</form>

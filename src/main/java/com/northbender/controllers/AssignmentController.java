@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.northbender.domain.Assignment;
 import com.northbender.services.AssignmentService;
+import com.northbender.tools.CodeCompiler;
+import com.northbender.tools.CompilationResult;
 
 @Controller
 public class AssignmentController {
@@ -59,8 +61,12 @@ public class AssignmentController {
 	}
 
 	@RequestMapping(value = "/assignment/result", method = RequestMethod.POST)
-	String submitAssignment(Assignment assignment) {
-		log.info( "assignment submitted:  " + assignment.getSolution());
+	String submitAssignment(Assignment assignment, Model model) {
+		CodeCompiler compiler = new CodeCompiler();
+		CompilationResult compilation = compiler.compile("org.acme.Test", assignment.getSolution());
+		log.info( "assignment submitted:  \n" + assignment.getSolution() + "\nBuild: " + compilation.isSuccess() + "\nConsole: " + compilation.getResult());
+		model.addAttribute("built", compilation.isSuccess());
+		model.addAttribute("console", compilation.getResult());
 		return "assignmentresult";
 	}
 }
