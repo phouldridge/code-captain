@@ -1,4 +1,4 @@
-package com.northbender.tools;
+package com.northbender.compiler;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

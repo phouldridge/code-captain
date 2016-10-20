@@ -1,4 +1,4 @@
-package com.northbender.tools;
+package com.northbender.compiler;
 
 import org.mdkt.compiler.InMemoryJavaCompiler;
 

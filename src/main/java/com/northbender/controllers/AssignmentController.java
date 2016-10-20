@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.northbender.compiler.CodeCompiler;
+import com.northbender.compiler.CompilationResult;
 import com.northbender.domain.Assignment;
 import com.northbender.services.AssignmentService;
-import com.northbender.tools.CodeCompiler;
-import com.northbender.tools.CompilationResult;
 
 @Controller
 public class AssignmentController {

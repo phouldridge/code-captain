@@ -1,4 +1,4 @@
-package com.northbender.tools;
+package com.northbender.compiler;
 
 public class CompilationResult {
 	private boolean success = true;
